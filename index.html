@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Livestock Disease Predictor</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Livestock Disease Predictor</h1>
+    <div class="tabs">
+      <button class="tablink active" data-tab="symptoms">By Symptoms</button>
+      <button class="tablink" data-tab="image">By Image</button>
+      <button class="tablink" data-tab="audio">By Audio</button>
+    </div>
+    <div id="symptoms" class="tabcontent" style="display:block;">
+      <h2>Select observed symptoms</h2>
+      <form id="symptomForm">
+        <div class="checkbox-grid">
+          {% for s in symptoms %}
+            <label><input type="checkbox" name="symptom" value="{{s}}"> {{s}}</label>
+          {% endfor %}
+        </div>
+        <button type="submit">Predict Disease</button>
+      </form>
+      <div id="symptomResult" class="result" style="display:none;">
+        <h3>Result</h3>
+        <pre id="symptomText"></pre>
+      </div>
+    </div>
+    <div id="image" class="tabcontent">
+      <h2>Upload cow image</h2>
+      <form id="imageForm" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*">
+        <button type="submit">Predict from Image</button>
+      </form>
+      <div id="imageResult" class="result" style="display:none;">
+        <h3>Result</h3>
+        <p id="imageText"></p>
+      </div>
+    </div>
+    <div id="audio" class="tabcontent">
+      <h2>Upload or record audio</h2>
+      <form id="audioForm" enctype="multipart/form-data">
+        <input type="file" name="audio" accept="audio/*">
+        <button type="submit">Predict from Audio</button>
+      </form>
+      <div style="margin:8px 0;">
+        <button id="recordBtn">Start Recording (3s)</button>
+        <span id="recStatus"></span>
+      </div>
+      <div id="audioResult" class="result" style="display:none;">
+        <h3>Result</h3>
+        <p id="audioText"></p>
+      </div>
+    </div>
+    <footer>
+      <small>Demo app — replace placeholder models and datasets with real data for production accuracy.</small>
+    </footer>
+  </div>
+<script src="/static/scripts.js"></script>
+</body>
+</html>

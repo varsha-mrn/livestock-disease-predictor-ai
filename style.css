@@ -1,0 +1,10 @@
+body { font-family: Arial, sans-serif; background:#f5f7fb; margin:0; padding:24px; display:flex; justify-content:center; }
+.container { max-width:900px; width:100%; background:#fff; padding:20px; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.06); }
+h1 { text-align:center; margin-top:0; }
+.tabs { display:flex; gap:8px; margin-bottom:12px; }
+.tablink { padding:8px 12px; border:none; background:#eef2f7; cursor:pointer; border-radius:6px; }
+.tablink.active { background:#2b6cb0; color:white; }
+.checkbox-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-bottom:12px; }
+button { background:#2b6cb0; color:white; border:none; padding:8px 12px; border-radius:6px; cursor:pointer; }
+.result { margin-top:12px; padding:10px; background:#f7fafc; border-radius:6px; }
+footer { text-align:center; margin-top:12px; color:#666; font-size:13px; }

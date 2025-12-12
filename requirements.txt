@@ -1,0 +1,7 @@
+Flask>=2.0
+numpy
+Pillow
+werkzeug
+# Optional for real training/inference:
+tensorflow>=2.10; platform_system!='Windows' or platform_machine!='AMD64'
+librosa; extra == 'audio'  # optional
